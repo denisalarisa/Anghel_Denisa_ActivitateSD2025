@@ -48,5 +48,12 @@ int main() {
 	printf("%d\n", sizeof(struct Masina*));
 	printf("%d", sizeof(masina));
 
+	struct Masina* vector;
+	int nrElem = 3;
+	vector = (struct MAsina*)malloc(nrElem * sizeof(struct Masina));
 
+	vector[0] = initializare(1, 3, "Dacia", 40, '5');
+	vector[1] = initializare(2, 5, "Honda", 30, '6');
+	vector[2] = initializare(3, 4, "Dacia", 50, '3');
+	return 0;
 }

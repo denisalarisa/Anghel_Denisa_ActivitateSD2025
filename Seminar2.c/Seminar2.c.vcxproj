@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1b44f6c3-c811-471f-9f12-8dc5e8bec569}</ProjectGuid>
-    <RootNamespace>AnghelDenisaActivitateSD2025</RootNamespace>
+    <ProjectGuid>{5a665f52-68d9-40b3-9ff4-3e14e7e1e2db}</ProjectGuid>
+    <RootNamespace>Seminar2c</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,8 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Seminar02.c" />
-    <ClCompile Include="Seminar03.c" />
+    <ClCompile Include="seminar02.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
