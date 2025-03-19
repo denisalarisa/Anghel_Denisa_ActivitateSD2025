@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/pregatire04/pregatire04.vcxproj
+/pregatire04/pregatire04.vcxproj.filters
