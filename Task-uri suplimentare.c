@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX_LINII 10
+
 struct Dosar {
     int cod;
     char* numeDosar;
@@ -27,6 +29,9 @@ struct Dosar initializare(int cod, const char* numeDosar, int nrDocumente, int* 
 
     return d;
 }
+
+///////////////////////// 1. Structura si functii /////////////////////////////
+
 
 //Realizati o functie care calculeaza ceva pentru un obiect de tipul implementat de voi. (o medie sau o suma, un maxim, un minim...
 // sau orice altceva).
@@ -63,6 +68,8 @@ void elibereazaDosar(struct Dosar* d) {
     free(d->numeDosar);
     free(d->nrPaginiDocumente);
 }
+
+////////////////////////// 2. VECTORI  /////////////////////////////////////////
 
 //Realizati o functie care va creea un nou vector în care va copia dintr - un vector primit ca
 //parametru obiectele care indeplinesc o anumita conditie.Stabiliti voi conditia in functie de
@@ -124,6 +131,8 @@ struct Dosar* concateneazaDoiVectori(struct Dosar* v1, int dim1, struct Dosar* v
     for (int i = 0; i < dim2; i++) rezultat[dim1 + i] = v2[i];
     return rezultat;
 }
+
+/////////////////////////// 3. FISIERE //////////////////////////////////////////////////
 
 //Scrieti o functie care va salva un obiect intr-un fisier text.
 void scrieDosarInFisier(FILE* f, struct Dosar d) {
@@ -190,56 +199,56 @@ struct Dosar* citesteVectorDinFisier(const char* numeFisier, int* dim) {
     return vector;
 }
 
-
+////////////////////////////// 4. Matrice ////////////////////
 
 
 
 
 
 int main() {
-   /* int pagini[] = { 12, 8, 15 };
+    int pagini[] = { 12, 8, 15 };
     struct Dosar d = initializare(75854, "Dosar Admitere", 3, pagini);
     afiseazaDosar(d);
 
     modificaNumeDosar(&d, "Dosar Penal");
     afiseazaDosar(d);
 
-    elibereazaDosar(&d);*/
+    elibereazaDosar(&d);
 
-    //Creati in functia main un vector alocat dinamic cu cel putin 5 obiecte de tipul structurii voastre.
-   // int pagini1[] = { 10, 5 ,17};       
-   // int pagini2[] = { 8, 7, 6 };      
-   // int pagini3[] = { 15, 10, 3 };    
-   // int pagini4[] = { 21};           
-   // int pagini5[] = { 9, 9, 9, 9 };   
+   // Creati in functia main un vector alocat dinamic cu cel putin 5 obiecte de tipul structurii voastre.
+    int pagini1[] = { 10, 5 ,17};       
+    int pagini2[] = { 8, 7, 6 };      
+    int pagini3[] = { 15, 10, 3 };    
+    int pagini4[] = { 21};           
+    int pagini5[] = { 9, 9, 9, 9 };   
 
-   // struct Dosar* dosar = (struct Dosar*)malloc(sizeof(struct Dosar) * 5);
-   // dosar[0] = initializare(1, "Dosar 1", 2, pagini1);
-   // dosar[1] = initializare(2, "Dosar 2", 3, pagini2);
-   // dosar[2] = initializare(3, "Dosar 3", 3, pagini3);
-   // dosar[3] = initializare(4, "Dosar 4", 1, pagini4);
-   // dosar[4] = initializare(5, "Dosar 5", 4, pagini5);
+    struct Dosar* dosar = (struct Dosar*)malloc(sizeof(struct Dosar) * 5);
+    dosar[0] = initializare(1, "Dosar 1", 2, pagini1);
+    dosar[1] = initializare(2, "Dosar 2", 3, pagini2);
+    dosar[2] = initializare(3, "Dosar 3", 3, pagini3);
+    dosar[3] = initializare(4, "Dosar 4", 1, pagini4);
+    dosar[4] = initializare(5, "Dosar 5", 4, pagini5);
 
-   // printf("\n============= Dosare cu mai mult de doua documente ==========================\n");
-   // int dimDosar;
-   // struct Dosar* dosare = maiMultDeDouaDocumente(dosar, 5, &dimDosar);
-   // afiseazaVector(dosare, dimDosar);
-   //// free(dosare);
+    printf("\n============= Dosare cu mai mult de doua documente ==========================\n");
+    int dimDosar;
+    struct Dosar* dosare = maiMultDeDouaDocumente(dosar, 5, &dimDosar);
+    afiseazaVector(dosare, dimDosar);
+    free(dosare);
 
-   // printf("\n============== Dosare cu mai mult de 25 de pagini in total ==================\n");
-   // int dimDosar2;
-   // struct Dosar* dosare2 = nrPagini(dosar, 5, &dimDosar2);
-   // afiseazaVector(dosare2, dimDosar2);
-   // //free(dosare2);
-   // 
-   // printf("\n================= Vector concatenat ================\n");
-   // int dimVectorConcatenat;
-   // struct Dosar* vectorConcatenat = concateneazaDoiVectori(dosare, dimDosar, dosare2, dimDosar2, &dimVectorConcatenat);
-   // afiseazaVector(vectorConcatenat, dimVectorConcatenat);
-   // free(vectorConcatenat);
-   // free(dosare);
-   // free(dosare2);
-   // return 0;
+    printf("\n============== Dosare cu mai mult de 25 de pagini in total ==================\n");
+    int dimDosar2;
+    struct Dosar* dosare2 = nrPagini(dosar, 5, &dimDosar2);
+    afiseazaVector(dosare2, dimDosar2);
+    free(dosare2);
+    
+    printf("\n================= Vector concatenat ================\n");
+    int dimVectorConcatenat;
+    struct Dosar* vectorConcatenat = concateneazaDoiVectori(dosare, dimDosar, dosare2, dimDosar2, &dimVectorConcatenat);
+    afiseazaVector(vectorConcatenat, dimVectorConcatenat);
+    free(vectorConcatenat);
+    free(dosare);
+    free(dosare2);
+    return 0;
 
      //task 3
 
